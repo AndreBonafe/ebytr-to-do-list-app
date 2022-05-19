@@ -1,0 +1,27 @@
+{
+  "name": "ebytr-to-do-list-app",
+  "version": "1.0.0",
+  "description": "An app to organize the Ebytr's dev's workflow",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreBonafe/ebytr-to-do-list-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreBonafe/ebytr-to-do-list-app/issues"
+  },
+  "homepage": "https://github.com/AndreBonafe/ebytr-to-do-list-app#readme",
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "react": "^18.1.0"
+  }
+}
