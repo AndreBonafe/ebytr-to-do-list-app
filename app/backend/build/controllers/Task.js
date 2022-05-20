@@ -11,7 +11,16 @@ class TaskController {
             return res.status(200).json(result);
         }
         catch (e) {
-            console.error(e);
+            next(e);
+        }
+    }
+    async createTask(req, res, next) {
+        try {
+            const tasks = req.body;
+            const created = await this.taskService.create(tasks);
+            return res.status(201).json(created);
+        }
+        catch (e) {
             next(e);
         }
     }

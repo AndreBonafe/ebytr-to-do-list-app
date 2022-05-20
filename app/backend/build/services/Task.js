@@ -9,6 +9,16 @@ class TaskService {
         const result = await this.taskModel.findAll();
         return result;
     }
+    async create(taskData) {
+        const created = await this.taskModel.create(taskData);
+        return created;
+    }
+    async edit(id, taskData) {
+        await this.taskModel.update(taskData, { where: { id } });
+    }
+    async delete(id) {
+        await this.taskModel.destroy({ where: { id } });
+    }
 }
 exports.default = TaskService;
 //# sourceMappingURL=Task.js.map
