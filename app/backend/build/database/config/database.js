@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.config = void 0;
 require("dotenv/config");
-exports.config = {
+const config = {
     username: process.env.DB_USER || 'root',
     password: process.env.DB_PASS || '123456',
     database: process.env.DB_NAME || 'EBYRT_TO_DO_LIST',
@@ -14,5 +13,5 @@ exports.config = {
     },
     logging: false,
 };
-module.exports = exports.config;
+module.exports = config;
 //# sourceMappingURL=database.js.map

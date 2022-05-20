@@ -1,4 +1,4 @@
-import { DataTypes, Model } from 'sequelize';
+import {  Model } from 'sequelize';
 import sequelize = require('sequelize');
 import db from '.';
 // import OtherModel from './OtherModel';
@@ -11,22 +11,22 @@ class Tasks extends Model {
 
 Tasks.init({
   taskId: {
-    type: DataTypes.NUMBER,
+    type: sequelize.STRING,
     autoIncrement: true,
     primaryKey: true,
   },
   taskName: {
-    type: DataTypes.STRING,
+    type: sequelize.STRING,
   },
   status: {
-    type: DataTypes.STRING,
+    type: sequelize.STRING,
   },
   createdAt: {
-    type: DataTypes.DATE,
+    type: sequelize.DATE,
     defaultValue: sequelize.literal('NOW()')
   },
   updatedAt: {
-    type: DataTypes.DATE,
+    type: sequelize.DATE,
     defaultValue: sequelize.literal('NOW()')
   }
 }, {
