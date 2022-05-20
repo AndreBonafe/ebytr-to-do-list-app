@@ -1,7 +1,11 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
+import Tasks from '../database/models/Task';
+import TaskService from '../services';
 import ITaskPackage from '../interfaces/ITaskPackage';
 
 export default class ErrorHandler {
+
+  private taskService = new TaskService();
 
   private checkStatusName(status: string): boolean {
     switch(status) {
@@ -27,6 +31,17 @@ export default class ErrorHandler {
     if(taskData.status.length === 0) return res.status(400).json({ error: 'status cant be empty' });
     if(this.checkStatusName(taskData.status)) {
       return res.status(400).json({ error: 'status must be: "pending", "done" or "in-progess"' });
+    }
+
+    next();
+  }
+
+  async validateId(req: Request, res: Response, next: NextFunction) {
+    const { id } = req.params;
+    const allTasks:Tasks[] = await this.taskService.getAll();
+
+    if(!allTasks.some((e) => Number(e.taskId) === Number(id))) {
+      return res.status(400).json({ error: 'invalid task id' });
     }
 
     next();

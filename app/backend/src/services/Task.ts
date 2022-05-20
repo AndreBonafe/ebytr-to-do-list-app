@@ -17,10 +17,10 @@ export default class TaskService {
   }
 
   async edit(id: number, taskData: ITaskPackage): Promise<void> {
-    await this.taskModel.update(taskData, { where: { id } });
+    await this.taskModel.update(taskData, { where: { taskId: id } });
   }
 
   async delete(id: number): Promise<void> {
-    await this.taskModel.destroy({ where: { id } });
+    await this.taskModel.destroy({ where: { taskId: id } });
   }
 }
