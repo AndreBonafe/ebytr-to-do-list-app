@@ -1,8 +1,8 @@
 # Ebytr To Do List App
 
-An app to organize the Ebytr's dev's workflow
+An app to organize the Ebyrt's dev's workflow
 
-Um app para organizar o fluxo de trabalho da Ebytr
+Um app para organizar o fluxo de trabalho da Ebyrt
 
 Instruções para rodar o app localmente:
 
