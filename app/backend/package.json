@@ -4,7 +4,11 @@
   "description": "",
   "main": "./build/server",
   "scripts": {
+    "build": "npx -y tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm run build && npm run db:reset",
+    "start": "node .",
+    "predev": "npm run build && npm run db:reset",
     "dev": "ts-node ./src/server.ts",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
@@ -16,8 +20,7 @@
     "eslint-import-resolver-typescript": "^2.7.1",
     "express": "^4.18.1",
     "nyc": "^15.1.0",
-    "sequelize": "^6.19.2",
-    "tsc": "^2.0.4"
+    "sequelize": "^6.19.2"
   },
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.2",

@@ -24,6 +24,28 @@ class TaskController {
             next(e);
         }
     }
+    async editTask(req, res, next) {
+        try {
+            const tasks = req.body;
+            const { id } = req.params;
+            await this.taskService.edit(Number(id), tasks);
+            return res.status(200).json({ message: `task #${id} successfully updated` });
+        }
+        catch (e) {
+            console.log(e);
+            next(e);
+        }
+    }
+    async deleteTask(req, res, next) {
+        try {
+            const { id } = req.params;
+            await this.taskService.delete(Number(id));
+            return res.status(204).end();
+        }
+        catch (e) {
+            next(e);
+        }
+    }
 }
 exports.default = TaskController;
 //# sourceMappingURL=Task.js.map

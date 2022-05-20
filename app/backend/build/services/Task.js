@@ -14,10 +14,10 @@ class TaskService {
         return created;
     }
     async edit(id, taskData) {
-        await this.taskModel.update(taskData, { where: { id } });
+        await this.taskModel.update(taskData, { where: { taskId: id } });
     }
     async delete(id) {
-        await this.taskModel.destroy({ where: { id } });
+        await this.taskModel.destroy({ where: { taskId: id } });
     }
 }
 exports.default = TaskService;
