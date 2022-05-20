@@ -10,4 +10,4 @@ Instruções para rodar o app localmente:
 -instale as dependencias com npm install na pasta backend
 -instale as dependencias com npm install na pasta frontend
 
-com dois terminais, rode npm install na pasta backend e frontend
+com dois terminais, rode npm start na pasta backend e frontend
