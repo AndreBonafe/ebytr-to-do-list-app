@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import OrderButtons from '../components/OrderButtons';
 import TaskList from '../components/TaskList';
 
 const Home = () => {
+  const [filter, setFilter] = useState('');
+
   return (
-    <TaskList />
+    <>
+      <OrderButtons filterFunction={setFilter}/>
+      <TaskList filter={filter}/>
+    </>
   )
 }
 
